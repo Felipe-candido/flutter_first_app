@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class PortfolioPage extends StatelessWidget {
   const PortfolioPage({super.key});
@@ -9,19 +10,20 @@ class PortfolioPage extends StatelessWidget {
       length: 3,
       child: Scaffold(
         appBar: AppBar(
+          centerTitle: true,
           title: Text('Portfólio'),
           bottom: TabBar(
             tabs: [
-              Tab(child: Text('PI-I')),
-              Tab(child: Text('PI-II')),
-              Tab(child: Text('PI-III')),
+              Tab(icon: Icon(FontAwesomeIcons.squareTwitter)),
+              Tab(child: Icon(FontAwesomeIcons.amazon)),
+              Tab(child: Icon(FontAwesomeIcons.whatsapp)),
             ],
           ),
         ),
         body: TabBarView(
           children: [
-            Container(color: Colors.red.shade200),
             Container(color: Colors.blue.shade200),
+            Container(color: Colors.amber.shade200),
             Container(color: Colors.green.shade200),
           ],
         ),
