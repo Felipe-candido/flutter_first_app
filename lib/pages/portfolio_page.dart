@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_first_app/pages/twitter_page.dart';
+import 'package:flutter_first_app/pages/whatsapp_page.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+import 'amazon_page.dart';
 
 class PortfolioPage extends StatelessWidget {
   const PortfolioPage({super.key});
@@ -21,11 +25,7 @@ class PortfolioPage extends StatelessWidget {
           ),
         ),
         body: TabBarView(
-          children: [
-            Container(color: Colors.blue.shade200),
-            Container(color: Colors.amber.shade200),
-            Container(color: Colors.green.shade200),
-          ],
+          children: [TwitterPage(), AmazonPage(), WhatsAppPage()],
         ),
       ),
     );
