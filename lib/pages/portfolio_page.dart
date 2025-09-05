@@ -15,12 +15,12 @@ class PortfolioPage extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          title: Text('Portfólio'),
+          title: Text('Flutter First App'),
           bottom: TabBar(
             tabs: [
-              Tab(icon: Icon(FontAwesomeIcons.squareTwitter)),
-              Tab(child: Icon(FontAwesomeIcons.amazon)),
-              Tab(child: Icon(FontAwesomeIcons.whatsapp)),
+              Tab(icon: Icon(FontAwesomeIcons.squareTwitter), text: 'Twitter'),
+              Tab(icon: Icon(FontAwesomeIcons.gripVertical), text: 'Xylophone'),
+              Tab(icon: Icon(FontAwesomeIcons.gripLines), text: 'Funny Sounds'),
             ],
           ),
         ),
