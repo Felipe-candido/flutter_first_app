@@ -27,6 +27,10 @@ class PortfolioPage extends StatelessWidget {
         body: TabBarView(
           children: [TwitterPage(), AmazonPage(), WhatsAppPage()],
         ),
+        floatingActionButton: FloatingActionButton.large(
+          onPressed: () {},
+          child: Icon(FontAwesomeIcons.github),
+        ),
       ),
     );
   }
