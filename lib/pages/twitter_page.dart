@@ -29,15 +29,24 @@ class TwitterPage extends StatelessWidget {
                 style: TextStyle(fontSize: 36, fontWeight: FontWeight.w900),
               ),
               Text(f.faker.lorem.sentences(6).join('\n').trim()),
-              Divider(),
+              Divider(height: 32,),
               Text('Comentários'),
               Expanded(
                 child: ListView(
                   children: List.generate(10, (index) {
                     return ListTile(
+                      leading: CircleAvatar(
+                        backgroundImage: NetworkImage(
+                          f.faker.image.loremPicsum(random: index * 5),
+                        ),
+                      ),
+                      trailing: Icon(Icons.more_horiz),
                       title: Text(f.faker.person.name()),
                       subtitle: Text(
-                        f.faker.lorem.sentences(Random().nextInt(5)).join('\n').trim(),
+                        f.faker.lorem
+                            .sentences(Random().nextInt(5))
+                            .join('\n')
+                            .trim(),
                       ),
                     );
                   }),

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_first_app/pages/twitter_page.dart';
-import 'package:flutter_first_app/pages/whatsapp_page.dart';
+import 'package:flutter_first_app/pages/funny_sounds_page.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import 'amazon_page.dart';
+import 'xylophone_page.dart';
 
 class PortfolioPage extends StatelessWidget {
   const PortfolioPage({super.key});
@@ -19,13 +19,13 @@ class PortfolioPage extends StatelessWidget {
           bottom: TabBar(
             tabs: [
               Tab(icon: Icon(FontAwesomeIcons.squareTwitter), text: 'Twitter'),
-              Tab(icon: Icon(FontAwesomeIcons.gripVertical), text: 'Xylophone'),
-              Tab(icon: Icon(FontAwesomeIcons.gripLines), text: 'Funny Sounds'),
+              Tab(icon: Icon(FontAwesomeIcons.gripLines), text: 'Xylophone'),
+              Tab(icon: Icon(FontAwesomeIcons.gripVertical), text: 'Funny Sounds'),
             ],
           ),
         ),
         body: TabBarView(
-          children: [TwitterPage(), AmazonPage(), WhatsAppPage()],
+          children: [TwitterPage(), XylophonePage(), FunnySoundsPage()],
         ),
         floatingActionButton: FloatingActionButton.large(
           onPressed: () {},
