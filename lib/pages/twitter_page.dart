@@ -29,7 +29,7 @@ class TwitterPage extends StatelessWidget {
                 style: TextStyle(fontSize: 36, fontWeight: FontWeight.w900),
               ),
               Text(f.faker.lorem.sentences(6).join('\n').trim()),
-              Divider(height: 32,),
+              Divider(height: 32),
               Text('Comentários'),
               Expanded(
                 child: ListView(
@@ -37,7 +37,7 @@ class TwitterPage extends StatelessWidget {
                     return ListTile(
                       leading: CircleAvatar(
                         backgroundImage: NetworkImage(
-                          f.faker.image.loremPicsum(random: index * 5),
+                          f.faker.image.loremPicsum(random: index * 3),
                         ),
                       ),
                       trailing: Icon(Icons.more_horiz),

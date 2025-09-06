@@ -37,10 +37,13 @@ class CustomButton extends StatelessWidget {
     return Expanded(
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
-        child: TextButton(
-          style: TextButton.styleFrom(backgroundColor: color.shade600),
+        child: ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: color.shade600,
+            elevation: 5
+          ),
           onPressed: onTap,
-          child: Icon(Icons.music_note, color: Colors.white54,),
+          child: Icon(Icons.music_note, color: Colors.white54, size: 32),
         ),
       ),
     );
