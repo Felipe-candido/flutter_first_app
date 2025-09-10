@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_first_app/pages/portfolio_page.dart';
+import 'package:flutter_soloud/flutter_soloud.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await SoLoud.instance.init();
   runApp(App());
 }
 

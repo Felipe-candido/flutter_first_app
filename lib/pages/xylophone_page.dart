@@ -1,7 +1,27 @@
 import 'package:flutter/material.dart';
 
+import 'package:flutter_first_app/services/audio_service.dart';
+
 class XylophonePage extends StatelessWidget {
-  const XylophonePage({super.key});
+  final AudioService audioService = AudioService();
+
+  XylophonePage({super.key});
+
+  Future<void> playSound(BuildContext context, int soundNumber) async {
+    try {
+      await audioService.playSound(soundNumber);
+    } catch (e) {
+      if (context.mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('Erro ao reproduzir som: ${e.toString()}'),
+            backgroundColor: Colors.red,
+            duration: const Duration(seconds: 3),
+          ),
+        );
+      }
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -9,13 +29,34 @@ class XylophonePage extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          CustomButton(color: Colors.red, onTap: () {}),
-          CustomButton(color: Colors.orange, onTap: () {}),
-          CustomButton(color: Colors.yellow, onTap: () {}),
-          CustomButton(color: Colors.green, onTap: () {}),
-          CustomButton(color: Colors.blue, onTap: () {}),
-          CustomButton(color: Colors.indigo, onTap: () {}),
-          CustomButton(color: Colors.purple, onTap: () {}),
+          CustomButton(
+            color: Colors.red,
+            onTap: () => playSound(context, 1),
+          ),
+          CustomButton(
+            color: Colors.orange,
+            onTap: () => playSound(context, 2),
+          ),
+          CustomButton(
+            color: Colors.yellow,
+            onTap: () => playSound(context, 3),
+          ),
+          CustomButton(
+            color: Colors.green,
+            onTap: () => playSound(context, 4),
+          ),
+          CustomButton(
+            color: Colors.blue,
+            onTap: () => playSound(context, 5),
+          ),
+          CustomButton(
+            color: Colors.indigo,
+            onTap: () => playSound(context, 6),
+          ),
+          CustomButton(
+            color: Colors.purple,
+            onTap: () => playSound(context, 7),
+          ),
         ],
       ),
     );
@@ -40,7 +81,7 @@ class CustomButton extends StatelessWidget {
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
             backgroundColor: color.shade600,
-            elevation: 5
+            elevation: 5,
           ),
           onPressed: onTap,
           child: Icon(Icons.music_note, color: Colors.white54, size: 32),

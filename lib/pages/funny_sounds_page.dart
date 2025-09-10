@@ -7,7 +7,7 @@ class FunnySoundsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      // backgroundColor: Colors.black,
       body: GridView.builder(
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 3,
@@ -16,10 +16,11 @@ class FunnySoundsPage extends StatelessWidget {
         ),
         itemCount: 18,
         itemBuilder: (context, index) {
-          return FilledButton(
-            style: FilledButton.styleFrom(
+          return ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              elevation: 5,
               backgroundColor:
-                  Colors.primaries[index % Colors.primaries.length].shade200,
+                  Colors.primaries[index % Colors.primaries.length],
             ),
             onPressed: () {},
             child: Icon(FontAwesomeIcons.play, color: Colors.black38),

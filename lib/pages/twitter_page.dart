@@ -11,7 +11,16 @@ class TwitterPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        // color: Colors.blue.shade200,
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment(0, -0.7),
+            end: Alignment(0, 0.1),
+            colors: [
+              Colors.blue.shade100,
+              Colors.white,
+            ],
+          ),
+        ),
         child: Padding(
           padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
           child: Column(
@@ -44,7 +53,7 @@ class TwitterPage extends StatelessWidget {
                       title: Text(f.faker.person.name()),
                       subtitle: Text(
                         f.faker.lorem
-                            .sentences(Random().nextInt(5))
+                            .sentences(Random().nextInt(3))
                             .join('\n')
                             .trim(),
                       ),
